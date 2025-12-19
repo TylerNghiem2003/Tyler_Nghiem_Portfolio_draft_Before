@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tyler Nghiem Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Futura+PT:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* RESET */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body, html { height: 100%; font-family: 'Futura PT', sans-serif; scroll-behavior: smooth; background:black; color:white;}
+
+  /* NAVBAR */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+    z-index: 20;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+  }
+
+  header nav {
+    display: flex;
+    gap: 45px;
+  }
+
+  header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  header nav a:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+
+  /* SECTIONS */
+  .section {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* --------------------------
+      HERO SECTION (Squarespace style)
+  ---------------------------*/
+  #home {
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+
+  .hero-left, .hero-right {
+    flex: 1;
+    min-height: 100vh;
+  }
+
+  .hero-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 60px;
+    text-align: left;
+  }
+
+  .hero-left h1 {
+    font-size: 68px;
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+
+  .hero-right {
+    background-size: cover;
+    background-position: center;
+    /* CHANGE THIS IMAGE */
+    background-image: url('./tylerNghiem.png');
+  }
+
+  /* --------------------------
+      ABOUT SECTION
+  ---------------------------*/
+  #about img {
+    width: 75%;
+    max-width: 1100px;
+    border-radius: 12px;
+  }
+
+  /* --------------------------
+      PROJECT GRID (Squarespace look)
+  ---------------------------*/
+  #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-grid {
+    width: 90%;
+    max-width: 1400px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+  }
+
+  .project-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+  }
+
+  .project-box:hover img {
+    transform: scale(1.14);
+  }
+
+  .project-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    font-size: 14px;
+    background: rgba(0,0,0,0.75);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 0.4s ease;
+  }
+
+  .project-box:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* CONTACT */
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="section">
+  <div class="hero-left">
+    <h1>Tyler Nghiem<br>Graphic Designer</h1>
+  </div>
+
+  <div class="hero-right"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <img src="./about me tyler.png" alt="About Tyler">
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2 style="font-size:48px; margin-bottom:10px;">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-box">
+      <img src="./BRZ.jpg">
+      <div class="project-info">Typography Project — custom headline typeface + Subaru BRZ visual.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./gundam.jpg">
+      <div class="project-info">Gundam halftone poster — bold yellow background.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./jump man.jpg">
+      <div class="project-info">Adidas OOH — dynamic jumping figure + custom type.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./SK8EL poster 2 copy.jpg">
+      <div class="project-info">SK8EL Production Poster — skate movement/energy.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./S14NISSAN.jpg">
+      <div class="project-info">Nissan S14 automotive graphic poster.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./doberman.jpg">
+      <div class="project-info">Dobermann halftone poster — bold, graphic, vintage style.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./Mustard suit man.jpg">
+      <div class="project-info">Grey Poupon vintage-inspired ad — bold type focus.</div>
+    </div>
+
+    <div class="project-box">
+      <img src="./BLUEONE.png">
+      <div class="project-info">Lexus IS350 street-style automotive poster.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2 style="font-size:48px;">Contact</h2>
+  <p>Email: tnnxha25@gmail.com</p>
+  <p>Instagram: @tylernghiemdesign</p>
+  <p>LinkedIn: Tyler Nghiem</p>
+</section>
+
+<script>
+  /* fade-in scroll animation */
+  const sections = document.querySelectorAll(".section");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("visible");
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
